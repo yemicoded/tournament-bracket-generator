@@ -18,7 +18,7 @@ const TournamentInfo: React.FC = () => {
     type: "tournament-info",
   }) as TFormHandler<ITournamentInfo>;
   const router = useRouter();
-  const classes = classNames("w-[95%] mx-auto md:w-full h-full flex items-center justify-center");
+  const classes = classNames("w-[95%] mx-auto md:w-full min-h-[calc(100vh-100px)] flex items-center justify-center");
   return (
     <Container className={classes}>
       <Container className="w-full md:w-[500px] border-2 rounded-[15px] p-4 md:p-6 flex flex-col space-y-6">

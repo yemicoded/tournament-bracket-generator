@@ -26,10 +26,10 @@ const ParticipantsName: React.FC = () => {
   const count = useSearchParams().get("count");
 
 
-  const classes = classNames("w-full h-full flex items-center justify-center py-4");
+  const classes = classNames("w-full min-h-[calc(100vh-100px)] flex items-center justify-center py-4");
   return (
     <Container className={classes}>
-      <Container className="w-[95%] md:w-[500px] max-h-[100%] lg:max-h-[500px] overflow-y-auto border-2 rounded-[15px] p-4 md:p-6 flex flex-col space-y-6">
+      <Container className="w-[95%] md:w-[500px] lg:max-h-[500px] lg:overflow-y-auto border-2 rounded-[15px] p-4 md:p-6 flex flex-col space-y-6">
         <Container>
           <Text fontWeight="semibold" className="text-[20px] text-center">
             Enter Participants Name

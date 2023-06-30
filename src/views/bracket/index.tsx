@@ -29,7 +29,7 @@ const BracketPageWrapper: React.FC = () => {
   });
 
   const classes = classNames(
-    "w-full h-full flex items-center justify-center p-4 md:p-6"
+    "w-full min-h-[calc(100vh-100px)] flex items-center justify-center p-4 md:p-6"
   );
   return (
     <Container className={classes}>
