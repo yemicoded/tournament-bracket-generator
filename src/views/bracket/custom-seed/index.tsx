@@ -58,10 +58,11 @@ const CustomSeedComponent = ({
             onChange={({ target }) => handleUpdate(target.value)}
             className="outline-none w-full px-2 py-1 border-2 rounded-b-[6px]"
           >
+            <option value="">Select Winner</option>
             <option value={seed.teams[0]?.name}>{seed.teams[0]?.name}</option>
             <option value={seed.teams[1]?.name}>{seed.teams[1]?.name}</option>
           </select>
-          <Text className="text-[12px]">Seed Index {seedIndex}</Text>
+          {/* <Text className="text-[12px]">Seed Index {seedIndex}</Text> */}
         </Container>
       </Container>
     </Seed>

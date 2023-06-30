@@ -26,15 +26,15 @@ const ParticipantsName: React.FC = () => {
   const count = useSearchParams().get("count");
 
 
-  const classes = classNames("w-full h-full flex items-center justify-center");
+  const classes = classNames("w-full h-full flex items-center justify-center py-4");
   return (
     <Container className={classes}>
-      <Container className="w-[500px] max-h-[500px] overflow-y-auto border-2 rounded-[15px] p-6 flex flex-col space-y-6">
+      <Container className="w-[95%] md:w-[500px] max-h-[100%] lg:max-h-[500px] overflow-y-auto border-2 rounded-[15px] p-4 md:p-6 flex flex-col space-y-6">
         <Container>
           <Text fontWeight="semibold" className="text-[20px] text-center">
             Enter Participants Name
           </Text>
-          <Text fontWeight="semibold" className="text-[16px] text-center">
+          <Text fontWeight="semibold" className="text-[14px] md:text-[16px] text-center text-gray-700">
             You requested to enter {count} participants
           </Text>
         </Container>

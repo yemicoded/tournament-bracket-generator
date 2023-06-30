@@ -29,11 +29,11 @@ const BracketPageWrapper: React.FC = () => {
   });
 
   const classes = classNames(
-    "w-full h-full flex items-center justify-center p-6"
+    "w-full h-full flex items-center justify-center p-4 md:p-6"
   );
   return (
     <Container className={classes}>
-      <Container className="w-full min-h-full max-h-full overflow-y-auto border-2 rounded-[15px] p-6 flex flex-col space-y-6">
+      <Container className="w-full min-h-full max-h-full overflow-y-auto border-2 rounded-[15px] p-2 md:p-4 lg:p-6 flex flex-col space-y-6">
         <Container className="flex flex-col space-y-6 h-full w-full">
           <Bracket
             rounds={matches}

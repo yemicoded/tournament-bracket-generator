@@ -53,7 +53,7 @@ const TournamentInfoHandler = (): TFormHandler<ITournamentInfo> => {
     onSubmit: onSubmit,
     validationSchema,
     validateOnBlur: false,
-    validateOnChange: true,
+    validateOnChange: validationAttempt,
   });
   return { formik, isLoading, setValidationAttempt };
 };

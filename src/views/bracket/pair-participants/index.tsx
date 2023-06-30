@@ -33,21 +33,21 @@ const PairParticipants: React.FC<IPairParticipants> = ({ setModalOpen }) => {
 
   return (
     <React.Fragment>
-      <Container className="min-w-[600px] max-w-[600px] max-h-[600px] bg-white overflow-hidden rounded-[20px] p-6 flex flex-col space-y-4">
+      <Container className="w-full md:min-w-[600px] max-w-[600px] max-h-[600px] bg-white overflow-hidden rounded-[20px] p-4 md:p-6 flex flex-col space-y-4">
         <Container>
-          <Text fontWeight="semibold" className="text-[24px] text-center">
+          <Text fontWeight="semibold" className="text-[20px] md:text-[24px] text-center">
             Pair Participants (Round 1)
           </Text>
-          <Text fontWeight="semibold" className="text-[16px] text-center">
+          <Text fontWeight="semibold" className="text-[14px] md:text-[16px] text-center">
             You created {participants.length} participants for Tournament Test1
           </Text>
         </Container>
         <Container className="w-full max-h-[100%] overflow-y-auto flex flex-col space-y-3">
-          <Container className="w-full rounded-[10px] bg-red-200 p-4">
-            <Text fontWeight="semibold" className="text-red-600">
+          <Container className="w-full rounded-[10px] bg-red-200 p-3 md:p-4">
+            <Text fontWeight="semibold" className="text-red-600 text-[14px] md:text-base">
               Note
             </Text>
-            <Text>
+            <Text className="text-[14px] md:text-base">
               It is required that you select a participant and Ensure that you
               do not select a participant in multiple match.
             </Text>
