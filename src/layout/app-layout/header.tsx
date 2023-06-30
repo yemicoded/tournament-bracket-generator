@@ -14,7 +14,7 @@ const Header: React.FC = () => {
   const pathname = usePathname();
   console.log("Pathname", pathname);
   const classes = classNames(
-    "fixed inset-0 w-full h-[100px] bg-primary flex items-center justify-center"
+    "fixed inset-0 w-full h-[100px] bg-primary flex items-center justify-center z-[99]"
   );
   return (
     <React.Fragment>
