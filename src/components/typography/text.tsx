@@ -6,7 +6,7 @@ export interface ITypography<E> {
   fontWeight?: "normal" | "medium" | "semibold" | "bold" | "extrabold";
 }
 
-export default function Text<E extends React.ComponentProps<"p">>({
+export default function Text<E extends React.ElementType = "p" | "h1">({
   as,
   children,
   className,

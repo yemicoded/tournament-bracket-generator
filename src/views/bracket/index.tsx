@@ -55,7 +55,6 @@ const BracketPageWrapper: React.FC = () => {
           />
         </Container>
       </Container>
-      <Text fontWeight="semibold" className="text-[14px] text-primary md:hidden">Swipe left for next round...</Text>
     </Container>
   );
 };
