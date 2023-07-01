@@ -6,11 +6,9 @@ import Input from "components/input/base-input";
 import { Text } from "components/typography";
 import { GameContext } from "providers/contexts/game-context";
 import React from "react";
-import {
-  Bracket,
-} from "react-brackets";
+import { Bracket } from "react-brackets";
 import getDocumentByID from "handlers/firebase/lib/getDocumentByID";
-import {useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import CustomSeedComponent from "./custom-seed";
 
 const BracketPageWrapper: React.FC = () => {
@@ -29,7 +27,7 @@ const BracketPageWrapper: React.FC = () => {
   });
 
   const classes = classNames(
-    "w-full min-h-[calc(100vh-100px)] flex items-center justify-center p-4 md:p-6"
+    "w-[94%] md:w-full mx-auto min-h-[calc(100vh-100px)] flex items-center justify-center md:p-6"
   );
   return (
     <Container className={classes}>

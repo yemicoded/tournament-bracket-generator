@@ -9,9 +9,9 @@ const AppLayout: React.FC<IAppLayout> = ({children}) => {
   return (
     <React.Fragment>
       <Header />
-      <Container className="min-h-[calc(100vh-100px)] mt-[100px]">
+      <Container className="mt-[100px]">
         {/* <Container className="bg-blue-500 min-h-[100%]"></Container> */}
-        <main className="">{children}</main>
+        <main className="w-full min-h-full">{children}</main>
       </Container>
     </React.Fragment>
   );
