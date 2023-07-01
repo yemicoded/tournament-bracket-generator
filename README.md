@@ -21,5 +21,8 @@ yarn dev
 # or
 pnpm dev
 ```
-
+After Installing,
 Vist [http://localhost:3000](http://localhost:3000) with your browser to view project locally.
+
+Alternatively,
+Vist [https://bracket-generator.vercel.app/](https://bracket-generator.vercel.app/)) with your browser to view live project
