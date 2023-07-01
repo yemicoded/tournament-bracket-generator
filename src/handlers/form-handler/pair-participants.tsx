@@ -66,10 +66,10 @@ const PairParticipantsHandler =
     const onSubmit = async (values: IPairParticipantsFormValue) => {
       setLoading(true);
       if (tournamentID) {
-        updateInitialBracket(tournamentID, values.seeds)
+        updateInitialBracket(tournamentID, values.seeds, participants)
           .then(() => {
             toast.success(
-              "Round 1 Tournament Participants Pair Updated Successfully. You can proceed to close the modal or update the pair!"
+              "Bracket has been reset and Round 1 Tournament Participants Pair Updated Successfully. You can proceed to close the modal or update the pair!"
             );
             setLoading(false);
           })

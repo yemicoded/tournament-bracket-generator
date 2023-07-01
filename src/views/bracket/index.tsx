@@ -27,11 +27,12 @@ const BracketPageWrapper: React.FC = () => {
   });
 
   const classes = classNames(
-    "w-[94%] md:w-full mx-auto flex flex-col items-center justify-center py-4 md:p-6"
+    "w-[94%] md:w-full mx-auto flex flex-col space-y-4 items-center justify-center py-4 md:p-6"
   );
   return (
     <Container className={classes}>
-      <Container className="w-full overflow-y-auto border-2 rounded-[15px] p-2 md:p-4 lg:p-6 flex flex-col space-y-6">
+      <Text fontWeight="semibold" className="text-[14px] text-white lg:hidden bg-primary rounded-[4px] px-4 py-2">Swipe left for next round</Text>
+      <Container className="w-full overflow-y-auto border-2 rounded-[15px] p-3 md:p-4 lg:p-6 flex flex-col space-y-6">
         <Container className="flex flex-col space-y-6 h-full w-full">
           <Bracket
             rounds={matches}
@@ -54,7 +55,7 @@ const BracketPageWrapper: React.FC = () => {
           />
         </Container>
       </Container>
-      <Text fontWeight="semibold" className="text-[14px] text-gray-700 text-secondary md:hidden">Swipe left for next round...</Text>
+      <Text fontWeight="semibold" className="text-[14px] text-primary md:hidden">Swipe left for next round...</Text>
     </Container>
   );
 };

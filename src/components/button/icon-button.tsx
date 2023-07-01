@@ -27,7 +27,7 @@ const IconButton: React.FC<IIconButton> = ({
   ...rest
 }) => {
   const classes = classNames(
-    "flex items-center justify-center rounded-[4px] w-[40px] h-[40px] duration-300 overflow-hidden",
+    "flex items-center justify-center rounded-[4px] w-[45px] h-[45px] duration-300 overflow-hidden",
     {
       "bg-primary text-white hover:bg-primary/95": variant === "primary",
     },
