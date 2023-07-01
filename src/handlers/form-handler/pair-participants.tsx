@@ -7,6 +7,7 @@ import { TParticipant } from "types/participant";
 import { useRouter, useSearchParams } from "next/navigation";
 import getDocumentByID from "handlers/firebase/lib/getDocumentByID";
 import updateInitialBracket from "handlers/firebase/updateInitialBracket";
+import { toast } from "react-toastify";
 
 export interface IPairParticipantsFormValue {
   seeds: ISeed[];
@@ -19,6 +20,7 @@ export interface ISeed {
 const PairParticipantsHandler =
   (): TFormHandler<IPairParticipantsFormValue> => {
     const [isLoading, setLoading] = React.useState<boolean>(false);
+    const [isOpen, setOpen] = React.useState<boolean>(false);
     const [validationAttempt, setValidationAttempt] =
       React.useState<boolean>(false);
     const [participants, setParticipants] = React.useState<TParticipant[]>([]);
@@ -62,10 +64,22 @@ const PairParticipantsHandler =
     //   ),
     // });
     const onSubmit = async (values: IPairParticipantsFormValue) => {
+      setLoading(true);
       if (tournamentID) {
-        updateInitialBracket(tournamentID, values.seeds);
+        updateInitialBracket(tournamentID, values.seeds)
+          .then(() => {
+            toast.success(
+              "Round 1 Tournament Participants Pair Updated Successfully. You can proceed to close the modal or update the pair!"
+            );
+            setLoading(false);
+          })
+          .catch((err) => {
+            toast.error(
+              "There was a problem creating your pair. Please try again..."
+            );
+          });
       }
-      console.log("form-values", values);
+      //   console.log("form-values", values);
     };
 
     const formik = useFormik({

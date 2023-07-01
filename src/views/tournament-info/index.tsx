@@ -40,7 +40,7 @@ const TournamentInfo: React.FC = () => {
             <Input
               type="number"
               label="No. of participants (Power of 2)"
-              placeholder="Example 2, 4, 1 etc."
+              placeholder="Example 2, 4, 8, 16 etc."
               name="participantsCount"
               value={formik.values.participantsCount}
               onChange={formik.handleChange}

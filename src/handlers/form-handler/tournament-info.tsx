@@ -10,6 +10,7 @@ import { GameContext } from "providers/contexts/game-context";
 import { useRouter, useSearchParams } from "next/navigation";
 import addDocument from "handlers/firebase/lib/addDocument";
 import { APP_LINKS } from "navigations/app-links";
+import { toast } from "react-toastify";
 
 export interface ITournamentInfo {
   id: string;
@@ -34,18 +35,29 @@ const TournamentInfoHandler = (): TFormHandler<ITournamentInfo> => {
   });
 
   const onSubmit = async (values: ITournamentInfo) => {
+    setLoading(true);
     await addDocument("Tournaments", {
       id: values.id,
       noOfParticipants: values.participantsCount,
     })
       .then(() => {
-        console.log("Tournament Added");
+        setLoading(false);
+        toast.success(
+          "Tournament Created Successfully. Redirecting in 5 seconds!"
+        );
+        // console.log("Tournament Added");
         router.push(
           `${APP_LINKS.PARTICIPANTS_NAME}?tournament=${values.id}&&count=${values.participantsCount}`
         );
       })
-      .catch((err) => console.log(err));
-    console.log("form-values", values);
+      .catch((err) => {
+        toast.error(
+          `There was a problem creating your tournament as a result of this error: ${err}`
+        );
+        setLoading(false);
+        // console.log(err);
+      });
+    // console.log("form-values", values);
   };
 
   const formik = useFormik({

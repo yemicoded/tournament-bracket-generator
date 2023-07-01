@@ -146,6 +146,7 @@ const PairParticipants: React.FC<IPairParticipants> = ({ setModalOpen }) => {
                   }}
                   variant="primary"
                   className="flex-1"
+                  isLoading={isLoading}
                 >
                   Submit Pair
                 </Button>

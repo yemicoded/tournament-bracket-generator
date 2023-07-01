@@ -11,6 +11,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { createBrackets } from "handlers/firebase/createBrackets";
 import addDocument from "handlers/firebase/lib/addDocument";
 import { APP_LINKS } from "navigations/app-links";
+import {toast} from 'react-toastify'
 
 export interface IModifiedParticipantsFormValue {
   participants: TParticipant[];
@@ -44,26 +45,38 @@ const ParticipantsNameHandler =
     });
     const onSubmit = async (values: IModifiedParticipantsFormValue) => {
       if (tournament && count) {
+        setLoading(true);
         await addDocument("Participants", {
           id: tournament,
           participants: values.participants,
         })
           .then(async () => {
+            toast.success("Tournament Participants Created Successfully. Generating Bracket Template")
             await addDocument("Matches", {
               id: tournament,
               matchList: createBrackets(values.participants),
             } as any)
               .then((res) => {
-                console.log("Brackets Generated");
+                setLoading(false);
+                toast.success("Brackets Template Created Successfully. Redirecting in 5 seconds!")
+                // console.log("Brackets Generated");
                 router.push(
                   `${APP_LINKS.BRACKET}?tournament=${tournament}&&count=${count}`
                 );
               })
-              .catch((err) => console.log("Could not create brackets"));
+              .catch((err) => {
+                toast.error(`There was an error generating bracket template due to this error: ${err}`)
+                setLoading(false);
+                // console.log("Could not create brackets");
+              });
           })
-          .catch(() => console.log("Could not create Participants"));
+          .catch((err) => {
+            toast.error(`There was an error creating participants due to this error: ${err}`)
+            setLoading(false);
+            // console.log("Could not create Participants");
+          });
       }
-      console.log("form-values", createBrackets(values.participants));
+    //   console.log("form-values", createBrackets(values.participants));
     };
 
     const formik = useFormik({
