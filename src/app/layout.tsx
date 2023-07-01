@@ -17,12 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <AppProvider>
+      {/* <AppProvider> */}
         <body className="relative">
           <div id="modal"></div>
           <AppLayout>{children}</AppLayout>
         </body>
-      </AppProvider>
+      {/* </AppProvider> */}
     </html>
   );
 }

@@ -42,7 +42,7 @@ const TournamentInfo: React.FC = () => {
               label="No. of participants (Power of 2)"
               placeholder="Example 2, 4, 8, 16 etc."
               name="participantsCount"
-              value={formik.values.participantsCount}
+              value={formik.values.participantsCount as unknown as number | undefined}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               errorMessage={formik.errors.participantsCount}

@@ -55,7 +55,6 @@ const ParticipantsName: React.FC = () => {
                     formik.errors.participants[index] &&
                     "Enter Name"
                   }
-                  onBlur={formik.handleBlur}
                   label={`Participant ${index + 1}`}
                   placeholder={`Enter Participant ${index + 1} Name`}
                 />

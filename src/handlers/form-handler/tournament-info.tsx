@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 
 export interface ITournamentInfo {
   id: string;
-  participantsCount: number | undefined;
+  participantsCount: number | null;
 }
 const TournamentInfoHandler = (): TFormHandler<ITournamentInfo> => {
   const [isLoading, setLoading] = React.useState<boolean>(false);
@@ -24,14 +24,12 @@ const TournamentInfoHandler = (): TFormHandler<ITournamentInfo> => {
 
   const formValues = {
     id: "",
-    participantsCount: undefined,
+    participantsCount: null,
   } as ITournamentInfo;
 
-  const validationSchema = Yup.object({
+  const validationSchema = Yup.object().shape({
     id: Yup.string().required("Please Enter Tournament Title"),
-    participantsCount: Yup.string().required(
-      "Enter the number of participants"
-    ),
+    participantsCount: Yup.number().required("Enter the number of participants"),
   });
 
   const onSubmit = async (values: ITournamentInfo) => {
