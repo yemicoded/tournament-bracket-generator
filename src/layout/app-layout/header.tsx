@@ -16,24 +16,24 @@ const Header: React.FC = () => {
   const pathname = usePathname();
   console.log("Pathname", pathname);
   const classes = classNames(
-    "fixed inset-0 w-full h-[70px] md:h-[100px] bg-primary flex items-center justify-center z-[99]"
+    "fixed inset-0 w-full h-[80px] md:h-[100px] bg-primary flex items-center justify-center z-[99]"
   );
   return (
     <React.Fragment>
       <header className={classes}>
         <Container className="w-[95%] md:w-[90%] mx-auto flex items-center justify-between">
-          <Container>
+          {/* <Container> */}
             <Text
               fontWeight="semibold"
-              className="hidden lg:block text-[20px] md:text-[24px] lg:text-[28px] text-white"
+              className="w-full hidden lg:block text-[20px] md:text-[24px] lg:text-[28px] text-white text-center"
             >
               Tournament Bracket Generator
             </Text>
-          </Container>
+          {/* </Container> */}
           {pathname !== APP_LINKS.BRACKET && (
             <Text
               fontWeight="semibold"
-              className="lg:hidden text-[20px] md:text-[24px] lg:text-[28px] text-white text-center md:text-left"
+              className="w-full lg:hidden text-[20px] md:text-[24px] lg:text-[28px] text-white text-center"
             >
               Tournament Bracket Generator
             </Text>

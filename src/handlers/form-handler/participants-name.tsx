@@ -58,7 +58,7 @@ const ParticipantsNameHandler =
             } as any)
               .then((res) => {
                 setLoading(false);
-                toast.success("Brackets Template Created Successfully. Redirecting in 5 seconds!")
+                toast.success("Brackets Template Created Successfully. Redirecting in 2 seconds!")
                 // console.log("Brackets Generated");
                 router.push(
                   `${APP_LINKS.BRACKET}?tournament=${tournament}&&count=${count}`

@@ -43,7 +43,7 @@ const TournamentInfoHandler = (): TFormHandler<ITournamentInfo> => {
       .then(() => {
         setLoading(false);
         toast.success(
-          "Tournament Created Successfully. Redirecting in 5 seconds!"
+          "Tournament Created Successfully. Redirecting in 2 seconds!"
         );
         // console.log("Tournament Added");
         router.push(
