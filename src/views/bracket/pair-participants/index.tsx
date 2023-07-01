@@ -39,7 +39,7 @@ const PairParticipants: React.FC<IPairParticipants> = ({ setModalOpen }) => {
             Pair Participants (Round 1)
           </Text>
           <Text fontWeight="semibold" className="text-[14px] md:text-[16px] text-center">
-            You created {participants.length} participants for Tournament Test1
+            You created {participants.length} participants for Tournament {tournamentID}
           </Text>
         </Container>
         <Container className="w-full max-h-[100%] overflow-y-auto flex flex-col space-y-3">

@@ -27,7 +27,7 @@ const BracketPageWrapper: React.FC = () => {
   });
 
   const classes = classNames(
-    "w-[94%] md:w-full mx-auto flex items-center justify-center py-4 md:p-6"
+    "w-[94%] md:w-full mx-auto flex flex-col items-center justify-center py-4 md:p-6"
   );
   return (
     <Container className={classes}>
@@ -54,7 +54,7 @@ const BracketPageWrapper: React.FC = () => {
           />
         </Container>
       </Container>
-      <Text fontWeight="semibold" className="text-[14px] text-gray-700">Swipe left for next round...</Text>
+      <Text fontWeight="semibold" className="text-[14px] text-gray-700 text-secondary md:hidden">Swipe left for next round...</Text>
     </Container>
   );
 };
